@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.notification.show {
+    display: block;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+/* Estilos para a galeria de imagens */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Estilos para texto responsivo */
+.content {
+    padding: 20px;
+}
+
+/* Layout para tablet (largura máxima de 768px) */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Layout para smartphone (largura máxima de 480px) */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Ajuste para impressão (print) */
+@media print {
+    .menu, .gallery {
+        display: none;
+    }
+
+    .content {
+        font-size: 14pt;
+        margin: 0;
+    }
+}
